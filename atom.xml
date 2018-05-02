@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tomato Blog</title>
+  
+  <subtitle>The days of Tomato and Readmore</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.readmore.ltd/"/>
+  <updated>2018-05-02T11:20:57.949Z</updated>
+  <id>http://www.readmore.ltd/</id>
+  
+  <author>
+    <name>Tomato</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三行情书 for Readmore</title>
+    <link href="http://www.readmore.ltd/2018/05/02/%E4%B8%89%E8%A1%8C%E6%83%85%E4%B9%A6/"/>
+    <id>http://www.readmore.ltd/2018/05/02/三行情书/</id>
+    <published>2018-05-02T08:52:02.000Z</published>
+    <updated>2018-05-02T11:20:57.949Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="I-Love-My-NightOwl"><a href="#I-Love-My-NightOwl" class="headerlink" title="I Love My NightOwl"></a>I Love My NightOwl</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Liar me = <span class="keyword">new</span> Liar();</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    me.say(<span class="string">"I never love you"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>给你写的第一个博客。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;I-Love-My-NightOwl&quot;&gt;&lt;a href=&quot;#I-Love-My-NightOwl&quot; class=&quot;headerlink&quot; title=&quot;I Love My NightOwl&quot;&gt;&lt;/a&gt;I Love My NightOwl&lt;/h2&gt;&lt;figure c
+      
+    
+    </summary>
+    
+      <category term="Readmore" scheme="http://www.readmore.ltd/categories/Readmore/"/>
+    
+    
+      <category term="book" scheme="http://www.readmore.ltd/tags/book/"/>
+    
+  </entry>
+  
+</feed>
