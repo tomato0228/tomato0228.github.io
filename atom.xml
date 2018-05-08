@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.readmore.ltd/"/>
-  <updated>2018-05-07T08:31:12.596Z</updated>
+  <updated>2018-05-08T12:35:10.634Z</updated>
   <id>http://www.readmore.ltd/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_1_两数之和(Two Sum)</title>
+    <link href="http://www.readmore.ltd/2018/05/08/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://www.readmore.ltd/2018/05/08/LeetCode-1-两数之和/</id>
+    <published>2018-05-08T11:44:47.000Z</published>
+    <updated>2018-05-08T12:35:10.634Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://leetcode-cn.com/problems/two-sum/description/" target="_blank" rel="noopener"><code>两数之和</code></a> <a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="noopener"><code>Two Sum</code></a></p><p>给定一个整数数组和一个目标值，找出数组中和为目标值的<strong>两个</strong>数。<br>你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。<br><strong>示例：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure><h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>利用 <strong>unordered_map</strong> 作为存储，键为当前元素值，索引为在 <code>numbers</code>中的下标值，比如 <code>i = 0</code> 时，此时首先要判断 <code>target - numbers[0] = 7</code> 是否在 <strong>map</strong> 中，如果不存在，那么插入键值对 <code>key = numbers[0] = 2, value = i = 0</code>，之后当 <code>i = 1</code> 时，此时判断 <code>target - numbers[1] = 2</code> 已存在于 <strong>map</strong> 中，那么取出该 <code>value = 0</code> 作为第一个返回值，当前 <code>i</code> 作为第二个返回值。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">int</span> n = numbers.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> numberToFind = target - numbers[i];</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">map</span>.find(numberToFind) != <span class="built_in">map</span>.end()) &#123;</span><br><span class="line">                result.push_back(<span class="built_in">map</span>[numberToFind]);</span><br><span class="line">                result.push_back(i);            </span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">map</span>[numbers[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/two-sum/description/
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://www.readmore.ltd/categories/LeetCode/"/>
+    
+    
+      <category term="算法 | LeetCode-简单" scheme="http://www.readmore.ltd/tags/%E7%AE%97%E6%B3%95-LeetCode-%E7%AE%80%E5%8D%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Offer_53题</title>
