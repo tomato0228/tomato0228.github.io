@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.readmore.ltd/"/>
-  <updated>2018-05-10T12:23:58.426Z</updated>
+  <updated>2018-05-10T14:09:44.537Z</updated>
   <id>http://www.readmore.ltd/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_6_Z字形变换</title>
+    <link href="http://www.readmore.ltd/2018/05/10/LeetCode-6-Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"/>
+    <id>http://www.readmore.ltd/2018/05/10/LeetCode-6-Z字形变换/</id>
+    <published>2018-05-10T12:54:27.000Z</published>
+    <updated>2018-05-10T14:09:44.537Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://leetcode-cn.com/problems/zigzag-conversion/description/" target="_blank" rel="noopener"><code>Z字形变换</code></a> <a href="https://leetcode.com/problems/zigzag-conversion/description/" target="_blank" rel="noopener"><code>ZigZag Conversion</code></a></p><p>将字符串 <code>&quot;PAYPALISHIRING&quot;</code> 以Z字形排列成给定的行数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br></pre></td></tr></table></figure><p>之后从左往右，逐行读取字符：<code>&quot;PAHNAPLSIIGYIR&quot;</code><br>实现一个将字符串进行指定行数变换的函数:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string convert(string s, int numRows);</span><br></pre></td></tr></table></figure><p><strong>示例 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;PAYPALISHIRING&quot;, numRows = 3</span><br><span class="line">输出: &quot;PAHNAPLSIIGYIR&quot;</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;PAYPALISHIRING&quot;, numRows = 4</span><br><span class="line">输出: &quot;PINALSIGYAHRPI&quot;</span><br><span class="line">解释:</span><br><span class="line">P     I    N</span><br><span class="line">A   L S  I G</span><br><span class="line">Y A   H R</span><br><span class="line">P     I</span><br></pre></td></tr></table></figure><p><strong>Tags</strong>: 字符串</p><h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>模拟Z字的生成过程，定义一个数组用来存放每一行的字符串，再定义direction一个方向用于扫描字符串时，Z字的方向是向下还是向上，具体信息，看代码，比较容易理解。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numRows == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str(numRows, <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">bool</span> direction = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            str[j] += s[i];</span><br><span class="line">            <span class="keyword">if</span> (j == numRows - <span class="number">1</span>) &#123;</span><br><span class="line">                direction = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                direction = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (direction) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> result = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> t : str) &#123;</span><br><span class="line">            result += t;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/zigzag-conversion/de
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://www.readmore.ltd/categories/LeetCode/"/>
+    
+      <category term="中等" scheme="http://www.readmore.ltd/categories/LeetCode/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="算法" scheme="http://www.readmore.ltd/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode-中等" scheme="http://www.readmore.ltd/tags/LeetCode-%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode_5_最长回文子串</title>
