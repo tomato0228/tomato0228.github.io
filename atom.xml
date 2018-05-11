@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.readmore.ltd/"/>
-  <updated>2018-05-11T06:52:23.320Z</updated>
+  <updated>2018-05-11T15:24:12.745Z</updated>
   <id>http://www.readmore.ltd/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode_36_有效的数独</title>
+    <link href="http://www.readmore.ltd/2018/05/11/LeetCode-36/"/>
+    <id>http://www.readmore.ltd/2018/05/11/LeetCode-36/</id>
+    <published>2018-05-11T14:13:49.000Z</published>
+    <updated>2018-05-11T15:24:12.745Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://leetcode-cn.com/problems/valid-sudoku/description/" target="_blank" rel="noopener"><code>有效的数独</code></a> <a href="https://leetcode.com/problems/valid-sudoku/description/" target="_blank" rel="noopener"><code>Valid Sudoku</code></a></p><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p><ol><li>数字 <code>1-9</code> 在每一行只能出现一次。</li><li>数字 <code>1-9</code> 在每一列只能出现一次。</li><li>数字 <code>1-9</code> 在每一个以粗实线分隔的 <code>3x3</code> 宫内只能出现一次。</li></ol><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" alt="有效的数独"><br>上图是一个部分填充的有效的数独。<br>数独部分空格内已填入了数字，空白格用 <code>&#39;.&#39;</code> 表示。</p><p><strong>示例 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],</span><br><span class="line">  [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]</span><br><span class="line">]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [&quot;8&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],</span><br><span class="line">  [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]</span><br><span class="line">]</span><br><span class="line">输出: false</span><br><span class="line">解释: 除了第一行的第一个数字从 5 改为 8 以外，空格内其他数字均与 示例1 相同。</span><br><span class="line">     但由于位于左上角的 3x3 宫内有两个 8 存在, 因此这个数独是无效的。</span><br></pre></td></tr></table></figure><p><strong>说明:</strong></p><ul><li>一个有效的数独（部分已被填充）不一定是可解的。</li><li>只需要根据以上规则，验证已经填入的数字是否有效即可。</li><li>给定数独序列只包含数字 <code>1-9</code> 和字符 <code>&#39;.&#39;</code> 。</li><li>给定数独永远是 <code>9x9</code> 形式的。</li></ul><p><strong>Tags</strong>: 哈希表</p><h2 id="思路-0"><a href="#思路-0" class="headerlink" title="思路 0"></a>思路 0</h2><p>先附上我的渣渣思路，主要看思路 1 ，超级赞。</p><h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>渣渣方法，三次全循环，第一循环查看行是否是有效的数独，第二循环查看列是否是有效的数独，第三循环查看以粗实线分隔的 <code>3x3</code> 宫内是否是有效的数独。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><code>C++</code></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> length = <span class="number">9</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; exist(<span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; length + <span class="number">1</span>; t++) &#123;</span><br><span class="line">                exist[t] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'.'</span>) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (exist[board[i][j] - <span class="string">'0'</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    exist[board[i][j] - <span class="string">'0'</span>] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; length + <span class="number">1</span>; t++) &#123;</span><br><span class="line">                exist[t] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[j][i] == <span class="string">'.'</span>) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (exist[board[j][i] - <span class="string">'0'</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    exist[board[j][i] - <span class="string">'0'</span>] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">3</span>; k++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> h = <span class="number">0</span>; h &lt; <span class="number">3</span>; h++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; length + <span class="number">1</span>; t++) &#123;</span><br><span class="line">                    exist[t] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = k * <span class="number">3</span>; i &lt; <span class="number">3</span> * k + <span class="number">3</span>; i++) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = h * <span class="number">3</span>; j &lt;  <span class="number">3</span> * h + <span class="number">3</span>; j++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'.'</span>) &#123;</span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (exist[board[i][j] - <span class="string">'0'</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            exist[board[i][j] - <span class="string">'0'</span>] = <span class="number">1</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路 1"></a>思路 1</h2><p>非常牛的一个思路，借助set容器来实现。</p><h3 id="解决思路-1"><a href="#解决思路-1" class="headerlink" title="解决思路"></a>解决思路</h3><p><code>&#39;4&#39; 在第 7 行</code> 将他存储为 <code>&quot;4 in row 7&quot;</code>.<br><code>&#39;4&#39; 在第 7 列</code> 将他存储为 <code>&quot;4 column 7&quot;</code>.<br><code>&#39;4&#39; 在最右上角的块里</code> 将他存储为 <code>&quot;4 in block 0-2&quot;</code>.<br>如果在集合里面有相同的数据，则表示重复出现，返回 <code>false</code> 。</p><p>比如在第 <code>7 行</code>出现第一个 <code>4</code> 时，在集合里面存入 <code>&quot;4 in row 7&quot;</code> ，然后又出现一个 <code>4</code> 时，<code>&quot;4 in row 7&quot;</code> 已经在集合里，就可以判定为是有效的数独，返回 <code>false</code>。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><p><code>Java</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValidSudoku</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        Set seen = <span class="keyword">new</span> HashSet();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">9</span>; ++j) &#123;</span><br><span class="line">                <span class="keyword">char</span> number = board[i][j];</span><br><span class="line">                <span class="keyword">if</span> (number != <span class="string">'.'</span>)</span><br><span class="line">                    <span class="keyword">if</span> (!seen.add(number + <span class="string">" in row "</span> + i) ||</span><br><span class="line">                        !seen.add(number + <span class="string">" in column "</span> + j) ||</span><br><span class="line">                        !seen.add(number + <span class="string">" in block "</span> + i/<span class="number">3</span> + <span class="string">"-"</span> + j/<span class="number">3</span>))</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/valid-sudoku/descrip
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="http://www.readmore.ltd/categories/LeetCode/"/>
+    
+      <category term="中等" scheme="http://www.readmore.ltd/categories/LeetCode/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="算法" scheme="http://www.readmore.ltd/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode-中等" scheme="http://www.readmore.ltd/tags/LeetCode-%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode_189_旋转数组</title>
@@ -47,8 +76,8 @@
   
   <entry>
     <title>LeetCode_6_Z字形变换</title>
-    <link href="http://www.readmore.ltd/2018/05/10/LeetCode-6-Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"/>
-    <id>http://www.readmore.ltd/2018/05/10/LeetCode-6-Z字形变换/</id>
+    <link href="http://www.readmore.ltd/2018/05/10/LeetCode-6/"/>
+    <id>http://www.readmore.ltd/2018/05/10/LeetCode-6/</id>
     <published>2018-05-10T12:54:27.000Z</published>
     <updated>2018-05-10T14:09:44.537Z</updated>
     
@@ -76,8 +105,8 @@
   
   <entry>
     <title>LeetCode_5_最长回文子串</title>
-    <link href="http://www.readmore.ltd/2018/05/10/LeetCode-5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/"/>
-    <id>http://www.readmore.ltd/2018/05/10/LeetCode-5-最长回文子串/</id>
+    <link href="http://www.readmore.ltd/2018/05/10/LeetCode-5/"/>
+    <id>http://www.readmore.ltd/2018/05/10/LeetCode-5/</id>
     <published>2018-05-10T09:05:29.000Z</published>
     <updated>2018-05-10T14:32:44.409Z</updated>
     
@@ -105,8 +134,8 @@
   
   <entry>
     <title>LeetCode_4_两个排序数组的中位数</title>
-    <link href="http://www.readmore.ltd/2018/05/09/LeetCode-4-%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"/>
-    <id>http://www.readmore.ltd/2018/05/09/LeetCode-4-两个排序数组的中位数/</id>
+    <link href="http://www.readmore.ltd/2018/05/09/LeetCode-4/"/>
+    <id>http://www.readmore.ltd/2018/05/09/LeetCode-4/</id>
     <published>2018-05-09T13:05:04.000Z</published>
     <updated>2018-05-10T11:08:28.230Z</updated>
     
@@ -134,8 +163,8 @@
   
   <entry>
     <title>LeetCode_3_无重复字符的最长子串</title>
-    <link href="http://www.readmore.ltd/2018/05/09/LeetCode-3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/"/>
-    <id>http://www.readmore.ltd/2018/05/09/LeetCode-3-无重复字符的最长子串/</id>
+    <link href="http://www.readmore.ltd/2018/05/09/LeetCode-3/"/>
+    <id>http://www.readmore.ltd/2018/05/09/LeetCode-3/</id>
     <published>2018-05-09T10:44:26.000Z</published>
     <updated>2018-05-10T11:08:23.586Z</updated>
     
@@ -163,8 +192,8 @@
   
   <entry>
     <title>LeetCode_2_两数相加</title>
-    <link href="http://www.readmore.ltd/2018/05/09/LeetCode-2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"/>
-    <id>http://www.readmore.ltd/2018/05/09/LeetCode-2-两数相加/</id>
+    <link href="http://www.readmore.ltd/2018/05/09/LeetCode-2/"/>
+    <id>http://www.readmore.ltd/2018/05/09/LeetCode-2/</id>
     <published>2018-05-09T08:19:08.000Z</published>
     <updated>2018-05-10T11:08:22.401Z</updated>
     
@@ -192,8 +221,8 @@
   
   <entry>
     <title>LeetCode_1_两数之和(Two Sum)</title>
-    <link href="http://www.readmore.ltd/2018/05/08/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
-    <id>http://www.readmore.ltd/2018/05/08/LeetCode-1-两数之和/</id>
+    <link href="http://www.readmore.ltd/2018/05/08/LeetCode-1/"/>
+    <id>http://www.readmore.ltd/2018/05/08/LeetCode-1/</id>
     <published>2018-05-08T11:44:47.000Z</published>
     <updated>2018-05-10T11:08:20.898Z</updated>
     
@@ -221,8 +250,8 @@
   
   <entry>
     <title>Offer_53题</title>
-    <link href="http://www.readmore.ltd/2018/05/07/Offer-53%E9%A2%98/"/>
-    <id>http://www.readmore.ltd/2018/05/07/Offer-53题/</id>
+    <link href="http://www.readmore.ltd/2018/05/07/Offer-53/"/>
+    <id>http://www.readmore.ltd/2018/05/07/Offer-53/</id>
     <published>2018-05-07T07:53:08.000Z</published>
     <updated>2018-05-07T08:31:12.596Z</updated>
     
@@ -275,8 +304,8 @@
   
   <entry>
     <title>三行情书 for Readmore</title>
-    <link href="http://www.readmore.ltd/2018/05/02/%E4%B8%89%E8%A1%8C%E6%83%85%E4%B9%A6/"/>
-    <id>http://www.readmore.ltd/2018/05/02/三行情书/</id>
+    <link href="http://www.readmore.ltd/2018/05/02/loveLetter/"/>
+    <id>http://www.readmore.ltd/2018/05/02/loveLetter/</id>
     <published>2018-05-02T08:52:02.000Z</published>
     <updated>2018-05-02T11:20:57.949Z</updated>
     
