@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="题目描述两数之和 Two Sum 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例： 123给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] Tags: 数组, 哈希表 解决思路利用 unordered_map">
+<meta name="description" content="题目描述存在重复元素 Contains Duplicate 给定一个整数数组，判断是否存在重复元素。如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。 示例 1: 12输入: [1,2,3,1]输出: true 示例 2: 12输入: [1,2,3,4]输出: false 示例 3: 12输入: [1,1,1,3,3,4,3,2,4,2]输出: t">
 <meta name="keywords" content="算法,LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_1_两数之和(Two Sum)">
-<meta property="og:url" content="http://www.readmore.ltd/2018/05/08/LeetCode-1/index.html">
+<meta property="og:title" content="LeetCode_217_存在重复元素">
+<meta property="og:url" content="http://www.readmore.ltd/2018/05/22/LeetCode-217/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="题目描述两数之和 Two Sum 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例： 123给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] Tags: 数组, 哈希表 解决思路利用 unordered_map">
+<meta property="og:description" content="题目描述存在重复元素 Contains Duplicate 给定一个整数数组，判断是否存在重复元素。如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。 示例 1: 12输入: [1,2,3,1]输出: true 示例 2: 12输入: [1,2,3,4]输出: false 示例 3: 12输入: [1,1,1,3,3,4,3,2,4,2]输出: t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-21T16:08:57.664Z">
+<meta property="og:updated_time" content="2018-05-21T16:43:40.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_1_两数之和(Two Sum)">
-<meta name="twitter:description" content="题目描述两数之和 Two Sum 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例： 123给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] Tags: 数组, 哈希表 解决思路利用 unordered_map">
+<meta name="twitter:title" content="LeetCode_217_存在重复元素">
+<meta name="twitter:description" content="题目描述存在重复元素 Contains Duplicate 给定一个整数数组，判断是否存在重复元素。如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。 示例 1: 12输入: [1,2,3,1]输出: true 示例 2: 12输入: [1,2,3,4]输出: false 示例 3: 12输入: [1,1,1,3,3,4,3,2,4,2]输出: t">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.readmore.ltd/2018/05/08/LeetCode-1/"/>
+  <link rel="canonical" href="http://www.readmore.ltd/2018/05/22/LeetCode-217/"/>
 
 
 
 
 
-  <title>LeetCode_1_两数之和(Two Sum) | Tomato Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>LeetCode_217_存在重复元素 | Tomato Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.readmore.ltd/2018/05/08/LeetCode-1/">
+    <link itemprop="mainEntityOfPage" href="http://www.readmore.ltd/2018/05/22/LeetCode-217/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tomato">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_1_两数之和(Two Sum)</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode_217_存在重复元素</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T19:44:47+08:00">
-                2018-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T00:34:08+08:00">
+                2018-05-22
               </time>
             
 
@@ -406,12 +406,17 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://leetcode-cn.com/problems/two-sum/description/" target="_blank" rel="noopener"><code>两数之和</code></a> <a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="noopener"><code>Two Sum</code></a></p>
-<p>给定一个整数数组和一个目标值，找出数组中和为目标值的<strong>两个</strong>数。<br>你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。<br><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://leetcode-cn.com/problems/contains-duplicate/description/" target="_blank" rel="noopener"><code>存在重复元素</code></a> <a href="https://leetcode.com/problems/contains-duplicate/description/" target="_blank" rel="noopener"><code>Contains Duplicate</code></a></p>
+<p>给定一个整数数组，判断是否存在重复元素。<br>如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
 <p><strong>Tags</strong>: 数组, 哈希表</p>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>利用 <strong>unordered_map</strong> 作为存储，键为当前元素值，索引为在 <code>numbers</code>中的下标值，比如 <code>i = 0</code> 时，此时首先要判断 <code>target - numbers[0] = 7</code> 是否在 <strong>map</strong> 中，如果不存在，那么插入键值对 <code>key = numbers[0] = 2, value = i = 0</code>，之后当 <code>i = 1</code> 时，此时判断 <code>target - numbers[1] = 2</code> 已存在于 <strong>map</strong> 中，那么取出该 <code>value = 0</code> 作为第一个返回值，当前 <code>i</code> 作为第二个返回值。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">int</span> n = numbers.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> numberToFind = target - numbers[i];</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">map</span>.find(numberToFind) != <span class="built_in">map</span>.end()) &#123;</span><br><span class="line">                result.push_back(<span class="built_in">map</span>[numberToFind]);</span><br><span class="line">                result.push_back(i);            </span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">map</span>[numbers[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>定义一个set，遍历数组，如果set里面没有当前数，则把当前数放入set中，否则返回true，遍历完后，说明没有重复的则返回false。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.size() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.find(n) == s.end()) &#123;</span><br><span class="line">                s.insert(n);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -427,12 +432,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/05/08/LeetCode-1/">LeetCode_1_两数之和(Two Sum)</a></p>
+  <p><span>本文标题:</span><a href="/2018/05/22/LeetCode-217/">LeetCode_217_存在重复元素</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Tomato 的个人博客">Tomato</a></p>
-  <p><span>发布时间:</span>2018年05月08日 - 19:05</p>
+  <p><span>发布时间:</span>2018年05月22日 - 00:05</p>
   <p><span>最后更新:</span>2018年05月22日 - 00:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/08/LeetCode-1/" title="LeetCode_1_两数之和(Two Sum)">http://www.readmore.ltd/2018/05/08/LeetCode-1/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/05/08/LeetCode-1/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/05/22/LeetCode-217/" title="LeetCode_217_存在重复元素">http://www.readmore.ltd/2018/05/22/LeetCode-217/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/05/22/LeetCode-217/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者</p>
 </div>
@@ -516,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/07/Offer-53/" rel="next" title="Offer_53题">
-                <i class="fa fa-chevron-left"></i> Offer_53题
+              <a href="/2018/05/22/LeetCode-122/" rel="next" title="LeetCode_122_买卖股票的最佳时机 II">
+                <i class="fa fa-chevron-left"></i> LeetCode_122_买卖股票的最佳时机 II
               </a>
             
           </div>
@@ -526,8 +531,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/09/LeetCode-2/" rel="prev" title="LeetCode_2_两数相加">
-                LeetCode_2_两数相加 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/22/LeetCode-136/" rel="prev" title="LeetCode_136_只出现一次的数字">
+                LeetCode_136_只出现一次的数字 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
