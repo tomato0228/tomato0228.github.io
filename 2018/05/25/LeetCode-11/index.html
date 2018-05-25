@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Tomato Blog">
 <meta property="og:description" content="题目描述盛最多水的容器 Container With Most Water 给定 $n$ 个非负整数 $a_1，a_2，…，a_n$，每个数代表坐标中的一个点 $(i, a_i)$ 。画 $n$ 条垂直线，使得垂直线 $i$ 的两个端点分别为 $(i, a_i)$ 和 $(i, 0)$。找出其中的两条线，使得它们与 $x$ 轴共同构成的容器可以容纳最多的水。 注意：你不能倾斜容器，$n$ 至少是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-25T10:48:15.167Z">
+<meta property="og:updated_time" content="2018-05-25T10:56:54.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_11_盛最多水的容器">
 <meta name="twitter:description" content="题目描述盛最多水的容器 Container With Most Water 给定 $n$ 个非负整数 $a_1，a_2，…，a_n$，每个数代表坐标中的一个点 $(i, a_i)$ 。画 $n$ 条垂直线，使得垂直线 $i$ 的两个端点分别为 $(i, a_i)$ 和 $(i, 0)$。找出其中的两条线，使得它们与 $x$ 轴共同构成的容器可以容纳最多的水。 注意：你不能倾斜容器，$n$ 至少是">
@@ -424,6 +424,7 @@
 </li>
 <li><strong>因此</strong>该算法的遍历一定经过了最大的盛水量的情况</li>
 </ul>
+<p><em>感谢<a href="https://segmentfault.com/a/1190000008824222" target="_blank" rel="noopener"><code>raledong</code></a>的证明，原文<a href="raledong">链接</a></em></p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxWater = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = height.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            maxWater = max(maxWater, min(height[left], height[right]) * (right - left));</span><br><span class="line">            height[left] &gt; height[right] ? right-- : left++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxWater;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
@@ -539,6 +540,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/05/25/LeetCode-13/" rel="prev" title="LeetCode_13_罗马数字转整数">
+                LeetCode_13_罗马数字转整数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -623,7 +628,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +639,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
