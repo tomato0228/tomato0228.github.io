@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="算法,LeetCode," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -88,18 +88,23 @@
 
 
 
-<meta name="description" content="题目描述  Tags:  解决思路Code12">
-<meta name="keywords" content="算法,LeetCode">
+<meta name="description" content="设计原则设计原则:  类应该对扩展开放,对修改关闭 (开发-关闭原则) 装饰者模式装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。  装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="装饰者模式">
+<meta property="og:title" content="设计模式----装饰者模式">
 <meta property="og:url" content="http://www.readmore.ltd/2018/06/23/装饰者模式/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="题目描述  Tags:  解决思路Code12">
+<meta property="og:description" content="设计原则设计原则:  类应该对扩展开放,对修改关闭 (开发-关闭原则) 装饰者模式装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。  装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-23T12:18:01.128Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fslewk22orj31kw14tnh4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fslfruwhe1j31kw13wnd2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fsllci30l6j30k801wt8x.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fsllcmfndyj31je0qq78r.jpg">
+<meta property="og:updated_time" content="2018-06-23T16:46:07.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="装饰者模式">
-<meta name="twitter:description" content="题目描述  Tags:  解决思路Code12">
+<meta name="twitter:title" content="设计模式----装饰者模式">
+<meta name="twitter:description" content="设计原则设计原则:  类应该对扩展开放,对修改关闭 (开发-关闭原则) 装饰者模式装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。  装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fslewk22orj31kw14tnh4.jpg">
 
 
 
@@ -135,7 +140,7 @@
 
 
 
-  <title>装饰者模式 | Tomato Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>设计模式----装饰者模式 | Tomato Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -323,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">装饰者模式</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式----装饰者模式</h1>
         
 
         <div class="post-meta">
@@ -358,19 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/简单-中等-困难/" itemprop="url" rel="index">
-                    <span itemprop="name">简单 中等 困难</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -406,10 +400,60 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href=""><code></code></a> <a href=""><code></code></a></p>
-<p><strong>Tags</strong>: </p>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+        <h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p><strong>设计原则: </strong> 类应该对扩展开放,对修改关闭 (开发-关闭原则)</p>
+<h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><p><strong>装饰者模式: </strong> 动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。</p>
+<ul>
+<li>装饰者和被装饰对象有相同的超类型。</li>
+<li>你可以用一个或多个装饰者包装一个对象。</li>
+<li>既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。</li>
+<li>装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。</li>
+<li>对象可以在任何时候被装饰，所以可以在运行时动态的、无限量的用你喜欢的装饰者来装饰对象。</li>
+</ul>
+<hr>
+<ul>
+<li>继承是扩展的一种形式，但是并不是获得灵活性的最好方式。</li>
+<li>组合和委托常常可以用在动态时添加新行为。</li>
+<li>装饰者类反映了它们所装饰对象的类型。</li>
+<li>你可以将一个组件用任意数量的装饰者包装起来。</li>
+<li>装饰者会引入大量的小类，导致复用变得复杂。</li>
+</ul>
+<hr>
+<p><strong>类图：</strong></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fslewk22orj31kw14tnh4.jpg" alt="decoratorUml"></p>
+<ul>
+<li>何时使用<ul>
+<li>需要为一个对象动态添加责任，并且不影响其他对象。</li>
+<li>处理可撤销的责任。</li>
+<li>当生成子类不可行的时候，比如需要大量子类来支持各种排列组合。</li>
+</ul>
+</li>
+<li>好处<ul>
+<li>比静态继承有更多灵活性</li>
+<li>在高层类中防止过多特征</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>太多小类</li>
+<li>和策略模式的不同之处?</li>
+</ul>
+</li>
+</ul>
+<h2 id="星巴兹咖啡的故事"><a href="#星巴兹咖啡的故事" class="headerlink" title="星巴兹咖啡的故事"></a>星巴兹咖啡的故事</h2><p>类图：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fslfruwhe1j31kw13wnd2.jpg" alt="beverageUml"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Component.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String describe = <span class="string">"Unknown Component"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescribe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> describe;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDescribe</span><span class="params">(String describe)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.describe = describe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Decorator.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Component component;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Component <span class="title">getComponent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> component;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setComponent</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.component = component;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">getDescribe</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * EspressoComponent.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EspressoComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">EspressoComponent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        setDescribe(<span class="string">"Espresso Coffee"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2.05</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * DecafComponent.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DecafComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DecafComponent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        setDescribe(<span class="string">"Decaf Coffee"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.25</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * MilkDecorator.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MilkDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MilkDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        setComponent(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.25</span> + getComponent().cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescribe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getComponent().getDescribe() + <span class="string">", Milk "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * MochaDecorator.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MochaDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MochaDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        setComponent(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.65</span> + getComponent().cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescribe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getComponent().getDescribe() + <span class="string">", Mocha "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * SoyDecorator.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SoyDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SoyDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        setComponent(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.45</span> + getComponent().cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescribe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getComponent().getDescribe() + <span class="string">", Soy "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * WhipDecoratoe.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhipDecoratoe</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WhipDecoratoe</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        setComponent(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.55</span> + getComponent().cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescribe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getComponent().getDescribe() + <span class="string">", Whip "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Client.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Component component = <span class="keyword">new</span> EspressoComponent();</span><br><span class="line">        component = <span class="keyword">new</span> MilkDecorator(component);</span><br><span class="line">        component = <span class="keyword">new</span> MochaDecorator(component);</span><br><span class="line">        component = <span class="keyword">new</span> MochaDecorator(component);</span><br><span class="line">        component = <span class="keyword">new</span> SoyDecorator(component);</span><br><span class="line">        System.out.println(component.getDescribe() + <span class="string">"$"</span> + component.cost());</span><br><span class="line">        Component component1 = <span class="keyword">new</span> DecafComponent();</span><br><span class="line">        component1 = <span class="keyword">new</span> MilkDecorator(component1);</span><br><span class="line">        component1 = <span class="keyword">new</span> WhipDecoratoe(component1);</span><br><span class="line">        component1 = <span class="keyword">new</span> SoyDecorator(component1);</span><br><span class="line">        System.out.println(component1.getDescribe() + <span class="string">"$"</span> + component1.cost());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fsllci30l6j30k801wt8x.jpg" alt="beverageResult"></p>
+<p>类图：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fsllcmfndyj31je0qq78r.jpg" alt="beverage1Uml"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * .java</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -424,11 +468,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/06/23/装饰者模式/">装饰者模式</a></p>
+  <p><span>本文标题:</span><a href="/2018/06/23/装饰者模式/">设计模式----装饰者模式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Tomato 的个人博客">Tomato</a></p>
   <p><span>发布时间:</span>2018年06月23日 - 20:06</p>
-  <p><span>最后更新:</span>2018年06月23日 - 20:06</p>
-  <p><span>原始链接:</span><a href="/2018/06/23/装饰者模式/" title="装饰者模式">http://www.readmore.ltd/2018/06/23/装饰者模式/</a>
+  <p><span>最后更新:</span>2018年06月24日 - 00:06</p>
+  <p><span>原始链接:</span><a href="/2018/06/23/装饰者模式/" title="设计模式----装饰者模式">http://www.readmore.ltd/2018/06/23/装饰者模式/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/06/23/装饰者模式/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者</p>
@@ -498,9 +542,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          
-            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
+            <a href="/tags/设计模式/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
           
         </div>
       
@@ -669,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决思路"><span class="nav-number">2.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计原则"><span class="nav-number">1.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式"><span class="nav-number">2.</span> <span class="nav-text">装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星巴兹咖啡的故事"><span class="nav-number">3.</span> <span class="nav-text">星巴兹咖啡的故事</span></a></li></ol></div>
             
 
           </div>
