@@ -88,18 +88,20 @@
 
 
 
-<meta name="description" content="I have no idea how long I can keep working on that. The only thing I hope is that it can record every detail in my life, and create stories for my-future-self.">
+<meta name="description" content="概述 外观模式：提供了一个统一的接口，用了访问子系统中的一群接口、外观定义了一个高层接口，让子系统更容易使用。  最少知识原则  外观只是提供你最直接的操作，并未将原来的子系统阻隔起来。如果你需要子系统类的更高层功能，还是可以使用原来的子系统。  外观模式和适配器模 外观模式不只是简化接口，还将客户和子系统组件解耦。  外观模式和适配器模式都可以将很多类包装起来，但是外观的意图是简化，而适配器是将">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式----外观模式">
 <meta property="og:url" content="http://www.readmore.ltd/2018/06/27/外观模式/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="I have no idea how long I can keep working on that. The only thing I hope is that it can record every detail in my life, and create stories for my-future-self.">
+<meta property="og:description" content="概述 外观模式：提供了一个统一的接口，用了访问子系统中的一群接口、外观定义了一个高层接口，让子系统更容易使用。  最少知识原则  外观只是提供你最直接的操作，并未将原来的子系统阻隔起来。如果你需要子系统类的更高层功能，还是可以使用原来的子系统。  外观模式和适配器模 外观模式不只是简化接口，还将客户和子系统组件解耦。  外观模式和适配器模式都可以将很多类包装起来，但是外观的意图是简化，而适配器是将">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-26T17:55:00.801Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fsp6av2vxlj318a0g6go4.jpg">
+<meta property="og:updated_time" content="2018-06-26T19:07:11.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式----外观模式">
-<meta name="twitter:description" content="I have no idea how long I can keep working on that. The only thing I hope is that it can record every detail in my life, and create stories for my-future-self.">
+<meta name="twitter:description" content="概述 外观模式：提供了一个统一的接口，用了访问子系统中的一群接口、外观定义了一个高层接口，让子系统更容易使用。  最少知识原则  外观只是提供你最直接的操作，并未将原来的子系统阻隔起来。如果你需要子系统类的更高层功能，还是可以使用原来的子系统。  外观模式和适配器模 外观模式不只是简化接口，还将客户和子系统组件解耦。  外观模式和适配器模式都可以将很多类包装起来，但是外观的意图是简化，而适配器是将">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fsp6av2vxlj318a0g6go4.jpg">
 
 
 
@@ -395,7 +397,36 @@
       
 
       
-        
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><hr>
+<p><strong>外观模式：</strong>提供了一个统一的接口，用了访问子系统中的一群接口、外观定义了一个高层接口，让子系统更容易使用。</p>
+<hr>
+<p><strong>最少知识原则</strong></p>
+<hr>
+<p>外观只是提供你最直接的操作，<strong>并未将原来的子系统阻隔起来</strong>。如果你需要子系统类的更高层功能，还是可以使用原来的子系统。 </p>
+<h2 id="外观模式和适配器模"><a href="#外观模式和适配器模" class="headerlink" title="外观模式和适配器模"></a>外观模式和适配器模</h2><ul>
+<li><strong>外观模式</strong>不只是简化接口，还将客户和子系统组件<strong>解耦</strong>。 </li>
+<li><strong>外观模式</strong>和<strong>适配器模式</strong>都可以将很多类包装起来，但是外观的意图是<strong>简化</strong>，而适配器是将接口转换成不同的接口。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>当你需要使用一个已有类，但是它的接口不是你想要的，就使用<strong>适配器模式</strong>；当你想要<strong>简化</strong>并<strong>统一</strong>一个大的接口，或者一组复杂的接口，就使用<strong>外观模式</strong>。</li>
+<li>有两种<strong>适配器模式</strong>：<strong>对象适配器</strong>和<strong>类适配器</strong>，类适配器需要多重继承。</li>
+<li><strong>适配器</strong>将对象包装起来以<strong>改变</strong>它的接口，<strong>装饰者</strong>将对象包装起来以<strong>增加新的行为和职责</strong>，<strong>外观</strong>将一组对象包装起来以<strong>简化</strong>。</li>
+</ul>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="文件加密模块"><a href="#文件加密模块" class="headerlink" title="文件加密模块"></a>文件加密模块</h3><p>某软件公司欲开发一个可应用于多个软件的文件加密模块，该模块可以对文件中的数据进行加密并将加密之后的数据存储在一个新文件中。</p>
+<p>具体的流程包括三个部分：分别是<strong>读取源文件</strong>、<strong>加密</strong>、<strong>保持加密之后的文件</strong>。其中，读取文件和保持文件使用流来实现，加密操作通过求模运算实现。</p>
+<p>这三个操作相对独立，为了实现代码的独立重用，让设计更符合<strong>单一职责原则</strong>，这三个操作的业务代码封装在三个不同的类中。</p>
+<p>现使用<strong>外观模式</strong>设计该文件加密模块。</p>
+<p><strong>Code：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ReaderFile.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReaderFile</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">read</span><span class="params">(String fileNameSrc)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"读取源文件: "</span> + fileNameSrc);</span><br><span class="line">        <span class="keyword">return</span> fileNameSrc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Encryption.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Encryption</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">encryption</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"加密文件文件"</span>);</span><br><span class="line">        <span class="keyword">return</span> text;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * WriterFile.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WriterFile</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(String text, String fileNameDes)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"保存加密后的文件为: "</span> + fileNameDes);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * EdsFacade.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EdsFacade</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ReaderFile readerFile;</span><br><span class="line">    <span class="keyword">private</span> WriterFile writerFile;</span><br><span class="line">    <span class="keyword">private</span> Encryption encryption;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">EdsFacade</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        readerFile = <span class="keyword">new</span> ReaderFile();</span><br><span class="line">        writerFile = <span class="keyword">new</span> WriterFile();</span><br><span class="line">        encryption = <span class="keyword">new</span> Encryption();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eds</span><span class="params">(String fileNameSrc, String fileNameDes)</span> </span>&#123;</span><br><span class="line">        String text = readerFile.read(fileNameSrc);</span><br><span class="line">        text = encryption.encryption(text);</span><br><span class="line">        writerFile.write(text, fileNameDes);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Client.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        EdsFacade edsFacade = <span class="keyword">new</span> EdsFacade();</span><br><span class="line">        edsFacade.eds(<span class="string">"设计模式.md"</span>, <span class="string">"加密版设计模式.md"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">读取源文件: 设计模式.md</span><br><span class="line">加密文件文件</span><br><span class="line">保存加密后的文件为: 加密版设计模式.md</span><br></pre></td></tr></table></figure>
+<p><strong>类图：</strong></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fsp6av2vxlj318a0g6go4.jpg" alt="edsUml"></p>
+
       
     </div>
     
@@ -413,7 +444,7 @@
   <p><span>本文标题:</span><a href="/2018/06/27/外观模式/">设计模式----外观模式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Tomato 的个人博客">Tomato</a></p>
   <p><span>发布时间:</span>2018年06月27日 - 01:06</p>
-  <p><span>最后更新:</span>2018年06月27日 - 01:06</p>
+  <p><span>最后更新:</span>2018年06月27日 - 03:06</p>
   <p><span>原始链接:</span><a href="/2018/06/27/外观模式/" title="设计模式----外观模式">http://www.readmore.ltd/2018/06/27/外观模式/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/06/27/外观模式/"  aria-label="复制成功！"></i></span>
   </p>
@@ -562,8 +593,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -634,6 +674,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外观模式和适配器模"><span class="nav-number">2.</span> <span class="nav-text">外观模式和适配器模</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">3.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件加密模块"><span class="nav-number">3.1.</span> <span class="nav-text">文件加密模块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

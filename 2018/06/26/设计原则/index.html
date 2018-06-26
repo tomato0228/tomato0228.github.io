@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="好莱坞原则  好莱坞原则：别调用（打电话给）我们，我们会调用（打电话给）你。  模版方法模式   有了这个原则，我们允许低层组件将自己挂钩到系统上，但是高层组件会决定什么时候和怎样使用这些低层组件。 换句话说，高层组件对待低层组件的方式是“别调用我们，我们会调用你”。  单一职责 单一职责：一个类应该只有一个引起变化的原因  迭代器模式   类的每个责任都有改变的潜在区域。超过一个责任意味着超过一">
+<meta name="description" content="最少知识原则 最少知识原则：只和你的密友谈话   当你设计一个系统，不管是任何对象，你都要注意它所交互的类有哪些，并注意它和这些类是如何交互的。 这个原则希望我们在设计中，不要让太多的类耦合在一起，免得修改系统中的一部分，会影响到其他部分。 如果许多类互相依赖，那这个系统会变成一个易碎的系统，需要花成本维护。  如何避免有太多的朋友?  对任何对象而言，在该对象的方法内，我们只应该调用属于以下范围">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式----设计原则">
 <meta property="og:url" content="http://www.readmore.ltd/2018/06/26/设计原则/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="好莱坞原则  好莱坞原则：别调用（打电话给）我们，我们会调用（打电话给）你。  模版方法模式   有了这个原则，我们允许低层组件将自己挂钩到系统上，但是高层组件会决定什么时候和怎样使用这些低层组件。 换句话说，高层组件对待低层组件的方式是“别调用我们，我们会调用你”。  单一职责 单一职责：一个类应该只有一个引起变化的原因  迭代器模式   类的每个责任都有改变的潜在区域。超过一个责任意味着超过一">
+<meta property="og:description" content="最少知识原则 最少知识原则：只和你的密友谈话   当你设计一个系统，不管是任何对象，你都要注意它所交互的类有哪些，并注意它和这些类是如何交互的。 这个原则希望我们在设计中，不要让太多的类耦合在一起，免得修改系统中的一部分，会影响到其他部分。 如果许多类互相依赖，那这个系统会变成一个易碎的系统，需要花成本维护。  如何避免有太多的朋友?  对任何对象而言，在该对象的方法内，我们只应该调用属于以下范围">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-26T15:29:10.141Z">
+<meta property="og:updated_time" content="2018-06-26T18:35:33.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式----设计原则">
-<meta name="twitter:description" content="好莱坞原则  好莱坞原则：别调用（打电话给）我们，我们会调用（打电话给）你。  模版方法模式   有了这个原则，我们允许低层组件将自己挂钩到系统上，但是高层组件会决定什么时候和怎样使用这些低层组件。 换句话说，高层组件对待低层组件的方式是“别调用我们，我们会调用你”。  单一职责 单一职责：一个类应该只有一个引起变化的原因  迭代器模式   类的每个责任都有改变的潜在区域。超过一个责任意味着超过一">
+<meta name="twitter:description" content="最少知识原则 最少知识原则：只和你的密友谈话   当你设计一个系统，不管是任何对象，你都要注意它所交互的类有哪些，并注意它和这些类是如何交互的。 这个原则希望我们在设计中，不要让太多的类耦合在一起，免得修改系统中的一部分，会影响到其他部分。 如果许多类互相依赖，那这个系统会变成一个易碎的系统，需要花成本维护。  如何避免有太多的朋友?  对任何对象而言，在该对象的方法内，我们只应该调用属于以下范围">
 
 
 
@@ -395,7 +395,26 @@
       
 
       
-        <h2 id="好莱坞原则"><a href="#好莱坞原则" class="headerlink" title="好莱坞原则"></a>好莱坞原则</h2><hr>
+        <h2 id="最少知识原则"><a href="#最少知识原则" class="headerlink" title="最少知识原则"></a>最少知识原则</h2><hr>
+<p><strong>最少知识原则：</strong>只和你的密友谈话</p>
+<hr>
+<ul>
+<li>当你设计一个系统，不管是任何对象，你都要注意它所交互的类有哪些，并注意它和这些类是如何交互的。</li>
+<li>这个原则希望我们在设计中，不要让太多的类耦合在一起，免得修改系统中的一部分，会影响到其他部分。</li>
+<li>如果许多类互相依赖，那这个系统会变成一个易碎的系统，需要花成本维护。</li>
+</ul>
+<p>如何避免有太多的朋友? </p>
+<p>对任何对象而言，在该对象的方法内，我们只应该调用属于以下范围的方法 :</p>
+<ul>
+<li>该<strong>对象本身</strong></li>
+<li>被当做<strong>方法的参数</strong>而传递进来的对象</li>
+<li>此方法所<strong>创建</strong>或<strong>实例化</strong>的任何对象</li>
+<li>对象的<strong>任何组件</strong></li>
+<li><strong>如果某对象是调用其他方法的返回结果，不要调用该对象的方法！</strong> </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//违背调用，如果某对象是调用其他方法的返回结果，不要调用该对象的方法！</span></span><br><span class="line"><span class="keyword">public</span> House&#123;</span><br><span class="line">	WeatherStation station;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getTemp</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> station.getThermometer().getTemperature();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正确调用</span></span><br><span class="line"><span class="keyword">public</span> House&#123;</span><br><span class="line">	WeatherStation station;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getTemp</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Thermometer thermometer=station.getThermometer();</span><br><span class="line">		<span class="keyword">return</span> getTempHelper(thermometer);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getTempHelper</span><span class="params">(Thermometer thermometer)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> thermometer.getTemperature();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="好莱坞原则"><a href="#好莱坞原则" class="headerlink" title="好莱坞原则"></a>好莱坞原则</h2><hr>
 <p> <strong>好莱坞原则：</strong>别调用（打电话给）我们，我们会调用（打电话给）你。</p>
 <hr>
 <p><strong>模版方法模式</strong></p>
@@ -437,7 +456,7 @@
   <p><span>本文标题:</span><a href="/2018/06/26/设计原则/">设计模式----设计原则</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Tomato 的个人博客">Tomato</a></p>
   <p><span>发布时间:</span>2018年06月26日 - 18:06</p>
-  <p><span>最后更新:</span>2018年06月26日 - 23:06</p>
+  <p><span>最后更新:</span>2018年06月27日 - 02:06</p>
   <p><span>原始链接:</span><a href="/2018/06/26/设计原则/" title="设计模式----设计原则">http://www.readmore.ltd/2018/06/26/设计原则/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/06/26/设计原则/"  aria-label="复制成功！"></i></span>
   </p>
@@ -681,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#好莱坞原则"><span class="nav-number">1.</span> <span class="nav-text">好莱坞原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单一职责"><span class="nav-number">2.</span> <span class="nav-text">单一职责</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最少知识原则"><span class="nav-number">1.</span> <span class="nav-text">最少知识原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好莱坞原则"><span class="nav-number">2.</span> <span class="nav-text">好莱坞原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单一职责"><span class="nav-number">3.</span> <span class="nav-text">单一职责</span></a></li></ol></div>
             
 
           </div>
