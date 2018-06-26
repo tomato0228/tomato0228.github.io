@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title>设计模式----外观模式</title>
+      <link href="/2018/06/27/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/06/27/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>设计模式----适配器模式</title>
+      <link href="/2018/06/27/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/06/27/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><hr><p><strong>适配器模式：</strong>将一个类的接口，<strong>转换</strong>成客户期望的另一个接口、适配器让原本的接口<strong>不兼容</strong>的类可以<strong>合作无间</strong>。</p><blockquote><p><strong>【注：在适配器模式定义中所提及的接口是指广义的接口，它可以表示一个方法或者方法的集合。】</strong></p></blockquote><hr><p><strong>开闭原则</strong></p><hr><ul><li>客户通过<strong>目标接口</strong>调用<strong>适配器</strong>的方法对适配器发出请求</li><li>适配器使用<strong>被适配者接口</strong>把请求转换成被适配者的一个或者多个调用接口</li><li>客户接受到调用的结果，但未察觉这一切是适配器在起转换作用</li></ul><hr><ul><li>适配器将客户从<strong>实现的</strong>接口<strong>解耦</strong> </li><li>如果我们想要改变接口，适配器可以将改变的部分封装起来，客户就不必为了应对不同的接口而每次跟着修改</li><li>使用<strong>对象组合</strong>：被适配者的子类都可以搭配适配器使用</li></ul><h2 id="类适配器和对象适配器"><a href="#类适配器和对象适配器" class="headerlink" title="类适配器和对象适配器"></a>类适配器和对象适配器</h2><ul><li>我们喜欢使用<strong>对象组合</strong>多于使用<strong>继承</strong>。 </li><li><strong>对象适配器</strong>不仅可以适配一个类，也可以适配该类的任何一个子类。 </li><li><strong>类适配器</strong>不需要重新实现整个被适配者，换句话说，可以<strong>共享代码</strong>。 </li><li><strong>类适配器</strong>仅仅需要一个类适配器，不需要一个适配器和一个被适配者。 </li><li>总而言之，Java不支持多重继承，我们还是倾向于用对象适配器 </li></ul><blockquote><p><strong>在对象适配器模式中，适配器与适配者之间是关联关系；在类适配器模式中，适配器与适配者之间是继承（或实现）关系</strong>。如果适配者Adapter为最终(Final)类，也无法使用类适配器</p></blockquote><h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><h3 id="对象适配器"><a href="#对象适配器" class="headerlink" title="对象适配器"></a>对象适配器</h3><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fsp3lln3tgj30oy0dqjtr.jpg" alt="img"></p><p>在对象适配器模式结构图中包含如下几个<strong>角色</strong>：</p><ul><li><p><strong>Target（目标抽象类）：</strong>目标抽象类定义客户所需接口，可以是一个抽象类或接口，也可以是具体类。</p></li><li><p><strong>Adapter（适配器类）：</strong>适配器可以调用另一个接口，作为一个<strong>转换器</strong>，对Adaptee和Target进行适配，适配器类是适配器模式的核心，在对象适配器中，它通过继承Target并关联一个Adaptee对象使二者产生联系。</p></li><li><strong>Adaptee（适配者类）：</strong>适配者即被适配的角色，它定义了一个已经存在的接口，这个接口需要适配，适配者类一般是一个具体类，包含了客户希望使用的业务方法，在某些情况下可能没有适配者类的源代码。</li></ul><h3 id="类适配器"><a href="#类适配器" class="headerlink" title="类适配器"></a>类适配器</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fsp3uhdkovj30os0dtac2.jpg" alt="img"></p><h2 id="主要优点"><a href="#主要优点" class="headerlink" title="主要优点"></a>主要优点</h2><ul><li><strong>将目标类和适配者类解耦</strong>，通过引入一个适配器类来重用现有的适配者类，无须修改原有结构。</li><li><strong>增加了类的透明性和复用性</strong>，将具体的业务实现过程封装在适配者类中，对于客户端类而言是透明的，而且提高了适配者的复用性，同一个适配者类可以在多个不同的系统中复用。</li><li><strong>灵活性和扩展性都非常好</strong>，通过使用配置文件，可以很方便地更换适配器，也可以在不修改原有代码的基础上增加新的适配器类，完全符合“开闭原则”。</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式----模板方法模式</title>
       <link href="/2018/06/26/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/06/26/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</url>
