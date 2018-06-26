@@ -88,13 +88,13 @@
 
 
 
-<meta name="description" content="概述状态模式(State Pattern)：允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。  这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道行为会随着内部状态而改变。 从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。 实际上，我们使用组合通过简单的引用不同类的对象呈现出这种类的改变的假">
+<meta name="description" content="概述封装基于状态的行为，并将行为委托到当前状态  状态模式(State Pattern)：允许对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。   这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道行为会随着内部状态而改变。 从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。 实际上，我们使用组合通过">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式----状态模式">
 <meta property="og:url" content="http://www.readmore.ltd/2018/06/25/状态模式/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="概述状态模式(State Pattern)：允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。  这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道行为会随着内部状态而改变。 从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。 实际上，我们使用组合通过简单的引用不同类的对象呈现出这种类的改变的假">
+<meta property="og:description" content="概述封装基于状态的行为，并将行为委托到当前状态  状态模式(State Pattern)：允许对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。   这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道行为会随着内部状态而改变。 从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。 实际上，我们使用组合通过">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fsnsgatr07j30q809m774.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fsnsryj4l7j30pi0bdn21.jpg">
@@ -105,10 +105,10 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fson33j05yj31500hewhg.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fsolw3kfasj30mz0aiae3.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fsomchpp5lj316g0gkdi8.jpg">
-<meta property="og:updated_time" content="2018-06-26T08:02:43.953Z">
+<meta property="og:updated_time" content="2018-06-26T10:31:41.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式----状态模式">
-<meta name="twitter:description" content="概述状态模式(State Pattern)：允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。  这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道行为会随着内部状态而改变。 从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。 实际上，我们使用组合通过简单的引用不同类的对象呈现出这种类的改变的假">
+<meta name="twitter:description" content="概述封装基于状态的行为，并将行为委托到当前状态  状态模式(State Pattern)：允许对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。   这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道行为会随着内部状态而改变。 从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。 实际上，我们使用组合通过">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fsnsgatr07j30q809m774.jpg">
 
 
@@ -405,26 +405,35 @@
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>状态模式(State Pattern)：</strong>允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>封装基于状态的行为，并将行为委托到当前状态</p>
+<hr>
+<p><strong>状态模式(State Pattern)：</strong>允许<strong>对象</strong>在其<strong>内部状态改变</strong>时<strong>改变它的行为</strong>，对象看起来似乎修改了它的类。</p>
+<hr>
 <ul>
-<li>这个模式将状态封装成为独立的类，并将动作委托到代表当前状态的对象，我们知道<strong>行为会随着内部状态而改变</strong>。</li>
-<li>从客户的角度来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得这个对象实际上是从别的类实例化而来的。</li>
-<li>实际上，我们使用组合通过简单的<strong>引用不同类的对象</strong>呈现出这种类的<strong>改变的假象</strong>。</li>
+<li>这个模式将<strong>状态</strong>封装成为<strong>独立的类</strong>，并将动作<strong>委托</strong>到代表当前状态的对象，我们知道<strong>行为会随着内部状态而改变</strong>。</li>
+<li>从客户的角度来看，如果说你使用的对象能够<strong>完全改变它的行为</strong>，那么你会觉得这个对象实际上是从别的类实例化而来的。</li>
+<li>实际上，我们使用<strong>组合</strong>通过简单的<strong>引用不同类的对象</strong>呈现出这种类的<strong>改变的假象</strong>。</li>
 </ul>
 <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fsnsgatr07j30q809m774.jpg" alt="img"></p>
 <ul>
-<li><p>状态模式允许一个对象基于它所处的内在状态而有多种不同的行为。</p>
+<li><strong>Context（环境类）：</strong>环境类又称为上下文类，它是拥有多种状态的对象。</li>
+<li><strong>State（抽象状态类）：</strong>它定义一个所有具体状态的共同接口，任何状态都实现这个相同的接口，这样一来，状态之间可以相互替换。</li>
+<li><strong>ConcreteState（具体状态类）：</strong>它是抽象状态类的子类，每一个子类实现一个与环境类的一个状态相关的行为，每一个具体状态类对应环境的一个具体状态，不同的具体状态类其行为有所不同。</li>
+</ul>
+<hr>
+<ul>
+<li><p>状态模式允许一个对象<strong>基于</strong>它所处的<strong>内在状态</strong>而有多种不同的行为。</p>
 </li>
-<li><p>Context通过委托当前所组合的状态对象获得行为。</p>
+<li><p>Context通过<strong>委托</strong>当前所组合的状态对象获得行为。</p>
 </li>
-<li><p>通过将每个状态封装到类中，我们把以后要做的任何改变局部化。</p>
+<li><p>通过将每个状态封装到类中，我们把以后要做的任何改变<strong>局部化</strong>。</p>
 </li>
-<li><p>状态策略和组合策略有同样的类图，但是它们的意图不同。</p>
+<li><p><strong>状态策略</strong>和<strong>组合策略</strong>有<strong>同样的类图</strong>，但是它们的意图不同。</p>
 </li>
 </ul>
 <h2 id="状态模式和策略模式对比"><a href="#状态模式和策略模式对比" class="headerlink" title="状态模式和策略模式对比"></a>状态模式和策略模式对比</h2><ul>
-<li>将一群行为封装在状态对象中，行为对于客户来说是透明的。正常情况下，客户不知道状态对象的存在。</li>
-<li>策略模式中，客户通常委托所要组合的对象改变行为。由客户决定做改变。</li>
+<li>状态模式是将一群<strong>行为封装在状态对象中</strong>，行为对于客户来说是<strong>透明</strong>的。正常情况下，客户<strong>不知道状态对象的存在</strong>。</li>
+<li>策略模式中，客户通常<strong>委托</strong>所要<strong>组合</strong>的对象改变行为。<strong>由客户决定做改变</strong>。</li>
 </ul>
 <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="信用卡业务系统"><a href="#信用卡业务系统" class="headerlink" title="信用卡业务系统"></a>信用卡业务系统</h3><p>Sunny软件公司欲为某银行开发一套信用卡业务系统，银行账户(Account)是该系统的核心类之一，通过分析，Sunny软件公司开发人员发现在该系统中，账户存在三种状态，且在不同状态下账户存在不同的行为，具体说明如下：</p>
 <ul>
@@ -512,7 +521,7 @@
   <p><span>本文标题:</span><a href="/2018/06/25/状态模式/">设计模式----状态模式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Tomato 的个人博客">Tomato</a></p>
   <p><span>发布时间:</span>2018年06月25日 - 21:06</p>
-  <p><span>最后更新:</span>2018年06月26日 - 16:06</p>
+  <p><span>最后更新:</span>2018年06月26日 - 18:06</p>
   <p><span>原始链接:</span><a href="/2018/06/25/状态模式/" title="设计模式----状态模式">http://www.readmore.ltd/2018/06/25/状态模式/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/06/25/状态模式/"  aria-label="复制成功！"></i></span>
   </p>
