@@ -88,21 +88,18 @@
 
 
 
-<meta name="description" content="概述 模板方法模式：在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。  模板方法定义了一个算法的步骤，并允许子类为一个或多个步骤提供实现。    开闭原则、单一职责   什么是模板？它是一个方法，更具体地，它是一个用一组步骤来定义算法的方法。 这保证了由子类提供了算法某一部分的实现，而算法结构保持不变。   对模板方">
+<meta name="description" content="概述">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式----模板方法模式">
-<meta property="og:url" content="http://www.readmore.ltd/2018/06/26/模板方法模式/index.html">
+<meta property="og:title" content="设计模式----单件模式">
+<meta property="og:url" content="http://www.readmore.ltd/2018/06/27/单件模式/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="概述 模板方法模式：在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。  模板方法定义了一个算法的步骤，并允许子类为一个或多个步骤提供实现。    开闭原则、单一职责   什么是模板？它是一个方法，更具体地，它是一个用一组步骤来定义算法的方法。 这保证了由子类提供了算法某一部分的实现，而算法结构保持不变。   对模板方">
+<meta property="og:description" content="概述">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fsp0ah8v1lj30f20cmadj.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fsp2pcvwgpj30yq0iqtbf.jpg">
-<meta property="og:updated_time" content="2018-06-27T02:39:13.950Z">
+<meta property="og:updated_time" content="2018-06-27T02:40:43.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式----模板方法模式">
-<meta name="twitter:description" content="概述 模板方法模式：在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。  模板方法定义了一个算法的步骤，并允许子类为一个或多个步骤提供实现。    开闭原则、单一职责   什么是模板？它是一个方法，更具体地，它是一个用一组步骤来定义算法的方法。 这保证了由子类提供了算法某一部分的实现，而算法结构保持不变。   对模板方">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fsp0ah8v1lj30f20cmadj.jpg">
+<meta name="twitter:title" content="设计模式----单件模式">
+<meta name="twitter:description" content="概述">
 
 
 
@@ -132,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.readmore.ltd/2018/06/26/模板方法模式/"/>
+  <link rel="canonical" href="http://www.readmore.ltd/2018/06/27/单件模式/"/>
 
 
 
 
 
-  <title>设计模式----模板方法模式 | Tomato Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>设计模式----单件模式 | Tomato Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -309,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.readmore.ltd/2018/06/26/模板方法模式/">
+    <link itemprop="mainEntityOfPage" href="http://www.readmore.ltd/2018/06/27/单件模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tomato">
@@ -326,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式----模板方法模式</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式----单件模式</h1>
         
 
         <div class="post-meta">
@@ -338,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T23:12:04+08:00">
-                2018-06-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T10:26:40+08:00">
+                2018-06-27
               </time>
             
 
@@ -372,8 +369,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/行为型/" itemprop="url" rel="index">
-                    <span itemprop="name">行为型</span>
+                  <a href="/categories/设计模式/创建型/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型</span>
                   </a>
                 </span>
 
@@ -409,74 +406,7 @@
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><hr>
-<p><strong>模板方法模式：</strong>在一个方法中定义一个<strong>算法的骨架</strong>，而将一些步骤<strong>延迟</strong>到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。</p>
-<blockquote>
-<p>模板方法定义了一个算法的步骤，并允许子类为一个或多个步骤提供实现。 </p>
-</blockquote>
-<hr>
-<p><strong>开闭原则</strong>、<strong>单一职责</strong></p>
-<hr>
-<ul>
-<li>什么是模板？它是一个方法，更具体地，它是一个用<strong>一组步骤</strong>来定义算法的方法。</li>
-<li>这保证了由子类提供了算法某一部分的实现，而<strong>算法结构保持不变</strong>。</li>
-</ul>
-<hr>
-<p><strong>对模板方法进行挂钩：</strong> </p>
-<ul>
-<li>钩子是一个在抽象类中声明的方法，但是只给出了<strong>空的</strong>或者<strong>缺省</strong>的实现。 </li>
-<li>这给了子类对算法不同点进行挂钩的能力；要不要挂钩，子类自行决定。 </li>
-</ul>
-<hr>
-<p>我如何知道什么时候使用<strong>抽象方法</strong>，什么时候使用<strong>钩子</strong>?</p>
-<ul>
-<li>当你的子类<strong>“必须”</strong>提供算法中某个方法或步骤的实现时，就使用<strong>抽象方法</strong>。</li>
-<li>如果算法的这个部分是<strong>可选</strong>的，就用<strong>钩子</strong>。</li>
-<li>如果是钩子，子类可以选择实现这个钩子，但并不强制这么做。</li>
-</ul>
-<hr>
-<ul>
-<li>一个“模板方法”定义了一个算法的步骤，将某些步骤的实现延迟到子类中，这是<strong>代码复用</strong>的一个重要技术。</li>
-<li>钩子在抽象类中什么也不做，或者做默认的行为。但在子类中可能被覆盖。</li>
-<li>为了防止子类改变模板方法，将模板方法声明成 <strong>final</strong>。</li>
-<li>策略模式和模板方法都封装算法，一个通过<strong>对象组合</strong>，一个通过<strong>继承</strong>。</li>
-<li><strong>工厂方法是模板方法模式的一种特例</strong>。</li>
-</ul>
-<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fsp0ah8v1lj30f20cmadj.jpg" alt="img"></p>
-<p>模板方法模式包含如下两个<strong>角色</strong>：</p>
-<ul>
-<li><strong>AbstractClass（抽象类）：</strong>在抽象类中定义了<strong>一系列基本操作(PrimitiveOperations)</strong>，这些基本操作可以是<strong>具体</strong>的，也可以是<strong>抽象</strong>的，每一个基本操作对应算法的一个步骤，在其子类中可以重定义或实现这些步骤。同时，在抽象类中实现了一个<strong>模板方法(Template Method)</strong>，用于定义一个算法的框架，模板方法不仅可以调用在抽象类中实现的基本方法，也可以调用在抽象类的子类中实现的基本方法，还可以调用其他对象中的方法。</li>
-<li><strong>ConcreteClass（具体子类）：</strong>它是抽象类的子类，用于实现在父类中声明的抽象基本操作以完成子类特定算法的步骤，也可以覆盖在父类中已经实现的具体基本操作。</li>
-</ul>
-<h2 id="模板方法与基本方法"><a href="#模板方法与基本方法" class="headerlink" title="模板方法与基本方法"></a>模板方法与基本方法</h2><p><strong>模板方法：</strong>一个模板方法是定义在抽象类中的、把基本操作方法<strong>组合</strong>在一起形成一个总算法或一个总行为的方法。</p>
-<p><strong>基本方法：</strong>基本方法是实现算法各个步骤的方法，是模板方法的组成部分。</p>
-<p><strong>基本方法又可以分为三种：</strong></p>
-<ul>
-<li><strong>抽象方法(Abstract Method)</strong>：一个抽象方法由抽象类声明、由其具体<strong>子类实现</strong>。</li>
-<li><strong>具体方法(Concrete Method)</strong>：一个具体方法由一个抽象类或具体类声明并实现，其<strong>子类可以进行覆盖也可以直接继承</strong>。</li>
-<li><strong>钩子方法(Hook Method)</strong>：一个钩子方法由一个抽象类或具体类声明并实现，而其子类<strong>可能</strong>会加以扩展。<ul>
-<li>第一类钩子方法是<strong>与一些具体步骤“挂钩”</strong>。这类钩子方法的返回类型通常是<strong>bool</strong>类型的，这类方法名一般为<strong>IsXXX()</strong>，用于对某个条件进行判断，如果条件满足则执行某一步骤，否则将不执行。</li>
-<li>第二类钩子方法是<strong>实现体为空的具体方法</strong>。子类可以根据需要<strong>覆盖</strong>或者<strong>继承</strong>这些钩子方法。 </li>
-</ul>
-</li>
-</ul>
-<h2 id="策略模式和模板方法模式"><a href="#策略模式和模板方法模式" class="headerlink" title="策略模式和模板方法模式"></a>策略模式和模板方法模式</h2><ul>
-<li><strong>策略模式</strong>定义了一个<strong>算法族</strong>，并使它们可以<strong>互相替换</strong>。自从每个算法都被封装，客户可以很方便的使用不同算法。 </li>
-<li><strong>模板方法</strong>定义了一个<strong>算法的框架</strong>，但是允许它的<strong>子类做其中一部分工作</strong>，这样对于算法的某个步骤就有不同的，但仍然能控制整个算法的结构。 </li>
-<li><strong>策略</strong>通过<strong>对象组合</strong>给客户提供了一个算法的实现。<strong>更灵活</strong>。 </li>
-<li><strong>模板方法</strong>对算法有<strong>更强的控制</strong>，并且<strong>没有重复代码</strong>。所以所有的<strong>子类可以共享</strong>。<strong>更少的对象</strong>，<strong>更高效</strong>。 </li>
-</ul>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="冒泡算法"><a href="#冒泡算法" class="headerlink" title="冒泡算法"></a>冒泡算法</h3><p>用模板方法模式实现冒泡算法，具体算法类包括数组和ArrayList类型两种 。</p>
-<p><strong>Code：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * BubbleSort.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> length;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLength</span><span class="params">(<span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.length = length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (isSwap(j)) &#123;</span><br><span class="line">                    swap(j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">isSwap</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * IntArrayBubbleSort.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntArrayBubbleSort</span> <span class="keyword">extends</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] array;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">IntArrayBubbleSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.array = array;</span><br><span class="line">        setLength(array.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSwap</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> array[index] &gt; array[index + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = array[index];</span><br><span class="line">        array[index] = array[index + <span class="number">1</span>];</span><br><span class="line">        array[index + <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ArrayListBubbleSort.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListBubbleSort</span> <span class="keyword">extends</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Integer&gt; list;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayListBubbleSort</span><span class="params">(ArrayList&lt;Integer&gt; list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.list = list;</span><br><span class="line">        setLength(list.size());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSwap</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.get(index) &gt; list.get(index + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = list.get(index);</span><br><span class="line">        list.set(index, list.get(index + <span class="number">1</span>));</span><br><span class="line">        list.set(index + <span class="number">1</span>, temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Client.java</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arrays = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>&#125;;</span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="number">2</span>);</span><br><span class="line">        list.add(<span class="number">4</span>);</span><br><span class="line">        list.add(<span class="number">6</span>);</span><br><span class="line">        list.add(<span class="number">8</span>);</span><br><span class="line">        list.add(<span class="number">9</span>);</span><br><span class="line">        list.add(<span class="number">1</span>);</span><br><span class="line">        list.add(<span class="number">3</span>);</span><br><span class="line">        list.add(<span class="number">5</span>);</span><br><span class="line">        list.add(<span class="number">7</span>);</span><br><span class="line">        <span class="keyword">new</span> IntArrayBubbleSort(arrays).sort();</span><br><span class="line">        System.out.println(Arrays.toString(arrays));</span><br><span class="line">        <span class="keyword">new</span> ArrayListBubbleSort(list).sort();</span><br><span class="line">        System.out.println(list.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
-<p><strong>类图：</strong></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fsp2pcvwgpj30yq0iqtbf.jpg" alt="bubblesortUml"></p>
-
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2>
       
     </div>
     
@@ -491,12 +421,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/06/26/模板方法模式/">设计模式----模板方法模式</a></p>
+  <p><span>本文标题:</span><a href="/2018/06/27/单件模式/">设计模式----单件模式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Tomato 的个人博客">Tomato</a></p>
-  <p><span>发布时间:</span>2018年06月26日 - 23:06</p>
+  <p><span>发布时间:</span>2018年06月27日 - 10:06</p>
   <p><span>最后更新:</span>2018年06月27日 - 10:06</p>
-  <p><span>原始链接:</span><a href="/2018/06/26/模板方法模式/" title="设计模式----模板方法模式">http://www.readmore.ltd/2018/06/26/模板方法模式/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/06/26/模板方法模式/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/06/27/单件模式/" title="设计模式----单件模式">http://www.readmore.ltd/2018/06/27/单件模式/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.readmore.ltd/2018/06/27/单件模式/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者</p>
 </div>
@@ -578,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/26/组合模式/" rel="next" title="设计模式----组合模式">
-                <i class="fa fa-chevron-left"></i> 设计模式----组合模式
+              <a href="/2018/06/27/外观模式/" rel="next" title="设计模式----外观模式">
+                <i class="fa fa-chevron-left"></i> 设计模式----外观模式
               </a>
             
           </div>
@@ -587,10 +517,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/27/适配器模式/" rel="prev" title="设计模式----适配器模式">
-                设计模式----适配器模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -738,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">2.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法与基本方法"><span class="nav-number">3.</span> <span class="nav-text">模板方法与基本方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略模式和模板方法模式"><span class="nav-number">4.</span> <span class="nav-text">策略模式和模板方法模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡算法"><span class="nav-number">5.1.</span> <span class="nav-text">冒泡算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li></ol></div>
             
 
           </div>

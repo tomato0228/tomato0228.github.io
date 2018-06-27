@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>设计模式----单件模式</title>
+      <link href="/2018/06/27/%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/06/27/%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2>]]></content>
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+          <category> 创建型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式----外观模式</title>
       <link href="/2018/06/27/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/06/27/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</url>
@@ -11,6 +34,8 @@
       <categories>
           
           <category> 设计模式 </category>
+          
+          <category> 结构型 </category>
           
       </categories>
       
@@ -33,6 +58,8 @@
           
           <category> 设计模式 </category>
           
+          <category> 结构型 </category>
+          
       </categories>
       
       
@@ -53,6 +80,8 @@
       <categories>
           
           <category> 设计模式 </category>
+          
+          <category> 行为型 </category>
           
       </categories>
       
@@ -75,6 +104,8 @@
           
           <category> 设计模式 </category>
           
+          <category> 结构型 </category>
+          
       </categories>
       
       
@@ -95,6 +126,8 @@
       <categories>
           
           <category> 设计模式 </category>
+          
+          <category> 设计原则 </category>
           
       </categories>
       
@@ -117,6 +150,8 @@
           
           <category> 设计模式 </category>
           
+          <category> 行为型 </category>
+          
       </categories>
       
       
@@ -137,6 +172,8 @@
       <categories>
           
           <category> 设计模式 </category>
+          
+          <category> 行为型 </category>
           
       </categories>
       
@@ -159,6 +196,8 @@
           
           <category> 设计模式 </category>
           
+          <category> 行为型 </category>
+          
       </categories>
       
       
@@ -179,6 +218,8 @@
       <categories>
           
           <category> 设计模式 </category>
+          
+          <category> 创建型 </category>
           
       </categories>
       
@@ -201,6 +242,8 @@
           
           <category> 设计模式 </category>
           
+          <category> 结构型 </category>
+          
       </categories>
       
       
@@ -222,6 +265,8 @@
           
           <category> 设计模式 </category>
           
+          <category> 行为型 </category>
+          
       </categories>
       
       
@@ -242,6 +287,8 @@
       <categories>
           
           <category> 设计模式 </category>
+          
+          <category> 行为型 </category>
           
       </categories>
       
