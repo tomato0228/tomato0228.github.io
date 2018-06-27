@@ -106,7 +106,7 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fsmd2bq66lj31a40hugom.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fspmgk3t3gj30lp0hrgpl.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fspoaszs3wj316o0tg42a.jpg">
-<meta property="og:updated_time" content="2018-06-27T05:34:46.222Z">
+<meta property="og:updated_time" content="2018-06-27T05:40:08.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式----工厂模式">
 <meta name="twitter:description" content="简单工厂方法  简单工厂模式并不属于GoF 23个经典设计模式。  概述  简单工厂模式(Simple Factory Pattern)：定义一个工厂类，它可以根据参数的不同返回不同类的实例，被创建的实例通常都具有共同的父类。  违反了“开闭原则”  简单工厂模式的要点在于：当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节。 简单工厂其实不是一个设计模式，而是">
@@ -455,7 +455,7 @@
 <p>将类的实例化（具体产品的创建）延迟到工厂类的子类（具体工厂）中完成，即由子类来决定应该实例化（创建）哪一个类。</p>
 </blockquote>
 <hr>
-<p><strong>“开闭原则”</strong>、<strong>单一职责原则</strong></p>
+<p><strong>“开闭原则”</strong>、<strong>单一职责原则</strong>、<strong>依赖倒置原则</strong></p>
 <hr>
 <p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fsm9w3o08nj30ky08gmzd.jpg" alt="factoryMethod"></p>
 <ul>
@@ -538,11 +538,16 @@
 <h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><hr>
 <p><strong>抽象工厂模式：</strong>提供一个接口，用于创建相关或依赖对象的<strong>家族</strong>，而不需要明确指定具体类。</p>
 <hr>
-<p><strong>“开闭原则”的倾斜性</strong>、<strong>单一职责原则</strong></p>
+<p><strong>“开闭原则”的倾斜性</strong>、<strong>单一职责原则</strong>、<strong>依赖倒置原则</strong></p>
 <hr>
 <ul>
 <li>抽象工厂允许客户使用抽象的接口来创建<strong>一组相关的产品</strong>，而不需要知道实际产出的具体产品是什么。 </li>
 <li>然后客户就从具体产品的细节中<strong>解耦</strong></li>
+</ul>
+<p>工厂方法模式于抽象工厂模式</p>
+<ul>
+<li>抽象工厂的方法经常以工厂方法的方式实现。 </li>
+<li>他们都能创建对象，但是工厂方法通过继承，而抽象工厂通过对象组合 </li>
 </ul>
 <h3 id="类图-2"><a href="#类图-2" class="headerlink" title="类图"></a>类图</h3><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fspmgk3t3gj30lp0hrgpl.jpg" alt="img"></p>
 <p>在抽象工厂模式结构图中包含如下几个<strong>角色</strong>：</p>
@@ -610,7 +615,7 @@
 <li><strong>工厂方法依赖于继承</strong>；对象创建委托给子类，子类实现工厂方法创建对象</li>
 <li><strong>抽象工厂依赖于对象组合</strong>；对象创建由工厂接口中的方法进行实现。</li>
 <li>所有的工厂模式都促进松耦合，具体是通过减少应用对于具体类型的依赖实现。</li>
-<li>工厂是一个面向抽象编程而不是面向具体实现编程的有力工具。</li>
+<li>工厂是一个<strong>面向抽象编程</strong>而不是面向具体实现编程的有力工具。</li>
 </ul>
 <hr>
 <ul>
