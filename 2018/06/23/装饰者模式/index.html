@@ -88,13 +88,13 @@
 
 
 
-<meta name="description" content="概念 装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。    装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。 对象可以在任何时候被装">
+<meta name="description" content="概述 装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。  开闭原则   装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。 对象可以在任">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式----装饰者模式">
 <meta property="og:url" content="http://www.readmore.ltd/2018/06/23/装饰者模式/index.html">
 <meta property="og:site_name" content="Tomato Blog">
-<meta property="og:description" content="概念 装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。    装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。 对象可以在任何时候被装">
+<meta property="og:description" content="概述 装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。  开闭原则   装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。 对象可以在任">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fslewk22orj31kw14tnh4.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fslfruwhe1j31kw13wnd2.jpg">
@@ -108,10 +108,10 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fsm3qbozxfj312b0fz44e.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fspph9371pg30n60bbt8r.gif">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fsm3p3683cj315o0k5dom.jpg">
-<meta property="og:updated_time" content="2018-06-27T06:10:37.303Z">
+<meta property="og:updated_time" content="2018-06-27T06:18:08.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式----装饰者模式">
-<meta name="twitter:description" content="概念 装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。    装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。 对象可以在任何时候被装">
+<meta name="twitter:description" content="概述 装饰者模式:  动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。  开闭原则   装饰者和被装饰对象有相同的超类型。 你可以用一个或多个装饰者包装一个对象。 既然装饰者和被装饰对象有相同的超类型，所以在任何需要原始对象（被包装的）的场合，可以用装饰过的对象替代它。 装饰者可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。 对象可以在任">
 <meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fslewk22orj31kw14tnh4.jpg">
 
 
@@ -419,9 +419,10 @@
       
 
       
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><hr>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><hr>
 <p><strong>装饰者模式: </strong> 动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。</p>
 <hr>
+<p><strong>开闭原则</strong></p>
 <hr>
 <ul>
 <li>装饰者和被装饰对象有相同的<strong>超类型</strong>。</li>
@@ -785,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">2.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何时使用"><span class="nav-number">3.</span> <span class="nav-text">何时使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好处"><span class="nav-number">4.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星巴兹咖啡的故事"><span class="nav-number">6.</span> <span class="nav-text">星巴兹咖啡的故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">7.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#咖啡的容量"><span class="nav-number">7.1.</span> <span class="nav-text">咖啡的容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印发票"><span class="nav-number">7.2.</span> <span class="nav-text">打印发票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#穿衣问题"><span class="nav-number">7.3.</span> <span class="nav-text">穿衣问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形界面显示构件库"><span class="nav-number">7.4.</span> <span class="nav-text">图形界面显示构件库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">2.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何时使用"><span class="nav-number">3.</span> <span class="nav-text">何时使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好处"><span class="nav-number">4.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星巴兹咖啡的故事"><span class="nav-number">6.</span> <span class="nav-text">星巴兹咖啡的故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">7.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#咖啡的容量"><span class="nav-number">7.1.</span> <span class="nav-text">咖啡的容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印发票"><span class="nav-number">7.2.</span> <span class="nav-text">打印发票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#穿衣问题"><span class="nav-number">7.3.</span> <span class="nav-text">穿衣问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形界面显示构件库"><span class="nav-number">7.4.</span> <span class="nav-text">图形界面显示构件库</span></a></li></ol></li></ol></div>
             
 
           </div>
